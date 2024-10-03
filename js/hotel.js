@@ -67,7 +67,6 @@ var listLocal = function() {
         listhotel += '<div class="card hotel p-2" style="width:auto">';
         listhotel += '<img class="card-img-top" src="img/' + data.img + '" alt="...">';
         listhotel += '<div class="card-title hotel-title text-center h5">' + data.name + '</div>';
-      
         listhotel += '<div class="price text-center h6">' + data.price + '₫</div>';
         listhotel += '<span class="text-center add-to-cart btn btn-outline-warning add-cart" data-id="' + data.id + '" data-name="' + data.name + '" data-img="' + data.img + '" data-location="' + data.location + '" data-price="' + data.price + '" onclick="tks()">';
         listhotel += '<a>';
@@ -77,7 +76,7 @@ var listLocal = function() {
         listhotel += '</div>';
         listhotel += '</div>';
 
-        document.getElementById("toprate").innerHTML += listhotel;
+        document.getElementById("banchay").innerHTML += listhotel;
     }
     Save();
 }
