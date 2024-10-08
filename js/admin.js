@@ -1,23 +1,21 @@
-var hotelAdmin = function() { 
-    var listhotel1 = "";  // Khởi tạo chuỗi trống để lưu toàn bộ HTML
-    
+var hotelAdmin = function() {
+    var listhotel1 = "";
     for (var i in hotel) {
-        var data = JSON.parse(JSON.stringify(hotel[i]));  // Sao chép dữ liệu của từng khách sạn
-        listhotel1 += '<tr>';  // Gán từng dòng HTML vào chuỗi
+        var data = JSON.parse(JSON.stringify(hotel[i]));
+        var listhotel1 = '<tr>';
         listhotel1 += '<td>' + data.id + '</td>';
         listhotel1 += '<td>' + data.name + '</td>';
         listhotel1 += '<td><img src="../img/' + data.img + '" alt="" style="width: 50px;height: 50px;"></td>';
+    
         listhotel1 += '<td>' + data.price + '</td>';
-        listhotel1 += '<td><button onclick="updateHotel(' + i + ')" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateHotel"><i class="fas fa-cogs"></i></button>';
+        listhotel1 += '<td><button onclick="updateHotel(' + i + ')" class="btn btn-outline-danger"  data-toggle="modal" data-target="#updateHotel"><i class="fas fa-cogs"></i></button>';
         listhotel1 += '<button onclick="deleteHotel(' + i + ')" class="btn ml-1 btn-outline-warning"><i class="fas fa-trash"></i></button></td>';
         listhotel1 += '</tr>';
-    }
 
-
-    document.getElementById("hotel-admin").innerHTML = listhotel1;
+        document.getElementById("hotel-admin").innerHTML += listhotel1;
     }
     // Save();
-
+}
 
 var addHotel = function() {
     var Hotel = {
@@ -78,6 +76,7 @@ var userAdmin = function() {
     }
     // Save();
 }
+
 
 hotelAdmin();
 userAdmin();

@@ -1,0 +1,79 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Search by Name</title>
+    <style>
+        .bg-gray-100 { background-color: #f7fafc; }
+        .p-6 { padding: 1.5rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .font-bold { font-weight: 700; }
+        .mb-4 { margin-bottom: 1rem; }
+        .border { border-width: 1px; }
+        .p-2 { padding: 0.5rem; }
+        .rounded { border-radius: 0.25rem; }
+        .text-white { color: white; }
+        .bg-blue-500 { background-color: #4299e1; }
+        .mt-4 { margin-top: 1rem; }
+        .text-green-600 { color: #48bb78; }
+        .text-red-600 { color: #e53e3e; }
+        .flex { display: flex; }
+        .justify-center { justify-content: center; }
+        .mt-6 { margin-top: 1.5rem; }
+    </style>
+</head>
+<body class="bg-gray-100 p-6">
+    <h1 class="text-2xl font-bold mb-4">Hotel Search by Name</h1>
+    <form id="searchForm" class="mb-4">
+        <input type="text" id="hotelName" placeholder="Enter Hotel name" class="border p-2 rounded" required>
+        <button type="submit" class="bg-blue-500 text-white p-2 rounded">Search</button>
+    </form>
+    <div id="result" class="mt-4"></div>
+
+    <!-- Nút Trở về Trang chủ -->
+    <div class="flex justify-center mt-6">
+        <button id="homeButton" class="bg-blue-500 text-white p-2 rounded">Trở về Trang chủ</button>
+    </div>
+
+    <script>
+        // Sample data to be stored in localStorage
+        const sampleHotels = [
+            { code: 'P1', name: 'Hotel DaLAX' },
+            { code: 'P2', name: 'Hotel CHiNsa' },
+            { code: 'P3', name: 'Hotel asiA' },
+            { code: 'P4', name: 'Hotel Modern' },
+            { code: 'P5', name: 'Hotel UDER' },
+            { code: 'P6', name: 'Hotel HONgKong' },
+            { code: 'P7', name: 'Hotel Emlement' },
+            { code: 'P8', name: 'Hotel 32' },
+        ];
+
+        // Store sample data in localStorage
+        localStorage.setItem('hotels', JSON.stringify(sampleHotels));
+
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('hotelName').value.toLowerCase();
+            const hotels = JSON.parse(localStorage.getItem('hotels'));
+            const foundHotels = hotels.filter(p => p.name.toLowerCase().includes(name));
+            const resultDiv = document.getElementById('result');
+
+            if (foundHotels.length > 0) {
+                resultDiv.innerHTML = foundHotels.map(p => `<p class="text-green-600">Found: ${p.name} (Code: ${p.code})</p>`).join('');
+            } else {
+                resultDiv.innerHTML = `<p class="text-red-600">No hotels found.</p>`;
+            }
+        });
+
+
+        // URL của trang chủ
+        const homeUrl = 'index.html';
+
+
+document.getElementById('homeButton').addEventListener('click', function() {
+    window.location.href = homeUrl;
+});
+    </script>
+</body>
+</html>
