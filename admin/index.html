@@ -20,7 +20,7 @@
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="../index.html">Hotel Management</a><button class="btn btn-link btn-sm order-1 order-lg-0"
+        <a class="navbar-brand" href="../index.html">Hotel Manage </a><button class="btn btn-link btn-sm order-1 order-lg-0 "
             id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button><!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             <div class="input-group">
@@ -52,7 +52,7 @@
                         <div class="sb-sidenav-menu-heading">Core</div>
                         <a class="nav-link" href="index.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Quản lí phòng
+                            Quản lí khách sạn
                         </a>
                         <a class="nav-link" href="index-user.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
@@ -122,16 +122,16 @@
         <div id="layoutSidenav_content">
 
             <div class="hotel">
-                <div class="title">Quản lý phòng khách sạn</div>
+                <div class="title">Quản lý khách sạn</div>
 
-                <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class=" fas fa-plus mr-2"></i>Thêm Phòng</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class=" fas fa-plus mr-2"></i>Create</button>
                 <table class="table ">
                     <thead class="thead-light text-center">
                         <tr>
-                            <th>ID phòng</th>
-                            <th>Loại phòng</th>
+                            <th>ID</th>
+                            <th>Name</th>
                             <th>Img</th>
-                            <th>Giá</th>
+                            <th>Price</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -152,7 +152,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Thêm Phòng</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Thêm khách sạn</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -163,15 +163,15 @@
                                 <input class="form-control" type="text" id="id" placeholder="id">
                             </div> -->
                             <div class="col-12 mt-3">
-                                <input class="form-control" type="text" id="name" placeholder="ID Phòng">
+                                <input class="form-control" type="text" id="name" placeholder="name">
                             </div>
                             <div class="col-12 mt-3">
-                                <input class="form-control" type="text" id="img" placeholder="Loại Phòng">
+                                <input class="form-control" type="text" id="img" placeholder="img">
                             </div>
                             <div class="col-12 mt-3">
-                                <input class="form-control" type="number" id="price" placeholder="Giá Phòng">
+                                <input class="form-control" type="number" id="price" placeholder="giá">
                             </div>
-                            <a class="btn btn-outline-danger mt-3" href="" onclick="addProduct()">Thêm</a>
+                            <a class="btn btn-outline-danger mt-3" href="" onclick="addHotel()">Thêm</a>
                         </form>
 
                     </div>
@@ -203,6 +203,7 @@
                             <div class="col-12 mt-3">
                                 <input class="form-control" type="text" id="imgd" placeholder="img">
                             </div>
+                         
                             <div class="col-12 mt-3">
                                 <input class="form-control" type="number" id="priced" placeholder="giá">
                             </div>
@@ -223,9 +224,7 @@
     crossorigin="anonymous"></script>
 <script src="../js/scripts.js"></script>
 <script src="../js/hotel.js"></script>
-<script src="../js/user.js"></script>
 <script src="../js/admin.js"></script>
-
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
 <script src="assets/demo/datatables-demo.js"></script>
